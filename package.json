@@ -1,22 +1,23 @@
 {
-  "name": "ethereumjs-common",
-  "version": "0.5.0",
-  "description": "Resources common to all Ethereum implementations",
+  "name": "wanchainjs-common",
+  "version": "0.5.1",
+  "description": "Resources common to all Wanchain implementations",
   "main": "index.js",
   "scripts": {
-    "coverage": "nyc npm run test && nyc report --reporter=text-lcov > .nyc_output/lcov.info",
-    "coveralls": "npm run coverage && coveralls <.nyc_output/lcov.info",
+    "test:coverage": "nyc npm run test:unit && npm run test:coveralls-upload",
+    "test:coveralls-upload": "if [ $COVERALLS_REPO_TOKEN ]; then nyc report --reporter=text-lcov | coveralls; fi",
     "lint": "standard",
+    "test:unit": "node tests/",
     "test": "npm run lint && node tests/",
     "build:docs": "documentation build ./index.js --format md --shallow > ./docs/index.md"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethereumjs/ethereumjs-common.git"
+    "url": "git+https://github.com/wanchainjs/ethereumjs-common.git"
   },
   "keywords": [
-    "ethereum",
-    "ethereumjs",
+    "wanchain",
+    "wanchainjs",
     "constants",
     "parameters",
     "genesis",
@@ -24,14 +25,14 @@
     "bootstrap"
   ],
   "nyc": {
-    "exclude": "tests/*.js" 
+    "exclude": "tests/*.js"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ethereumjs/ethereumjs-common/issues"
+    "url": "https://github.com/wanchainjs/ethereumjs-common/issues"
   },
-  "homepage": "https://github.com/ethereumjs-ethereumjs/common",
+  "homepage": "https://github.com/wanchainjs/wanchainjs-common",
   "devDependencies": {
     "coveralls": "^3.0.1",
     "documentation": "^6.3.2",
@@ -41,8 +42,8 @@
   },
   "maintainers": [
     {
-      "name": "Holger Drewes",
-      "email": "Holger.Drewes@gmail.com"
+      "name": "Tyrion70",
+      "email": "Tyrion70@gmail.com"
     }
   ],
   "dependencies": {}
