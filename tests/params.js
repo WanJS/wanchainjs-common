@@ -21,19 +21,12 @@ tape('[Common]: Parameter access', function (t) {
     c.setHardfork('byzantium')
     st.equal(c.param('gasPrices', 'ecAdd'), 500, 'Should return correct value for HF set in class')
 
-    c = new Common('mainnet', 'byzantium', ['byzantium', 'constantinople'])
-    st.throws(function () { c.param('gasPrices', 'expByte', 'spuriousDragon') }, /supportedHardforks$/, 'Should throw when calling param() with an unsupported hardfork')
-    st.throws(function () { c.paramByBlock('gasPrices', 'expByte', 0) }, /supportedHardforks$/, 'Should throw when calling paramByBlock() with an unsupported hardfork')
-
     st.end()
   })
 
   t.test('Parameter updates', function (st) {
     let c = new Common('mainnet')
-    st.throws(function () { c.param('gasPrices', 'ecAdd', 'spuriousDragon') }, /value for ecAdd not found$/, 'Should throw for a value set on a later HF')
-
-    st.equal(c.param('pow', 'minerReward', 'chainstart'), '5000000000000000000', 'Should return correct value for chain start')
-    st.equal(c.param('pow', 'minerReward', 'byzantium'), '3000000000000000000', 'Should reflect HF update changes')
+    st.equal(c.param('pow', 'minerReward', 'byzantium'), '0', 'Should reflect HF update changes')
 
     st.end()
   })
@@ -41,8 +34,8 @@ tape('[Common]: Parameter access', function (t) {
   t.test('Access by block number, paramByBlock()', function (st) {
     let c = new Common('mainnet', 'byzantium')
 
-    st.equal(c.paramByBlock('pow', 'minerReward', 4370000), '3000000000000000000', 'Should correctly translate block numbers into HF states (updated value)')
-    st.equal(c.paramByBlock('pow', 'minerReward', 4369999), '5000000000000000000', 'Should correctly translate block numbers into HF states (original value)')
+    st.equal(c.paramByBlock('pow', 'minerReward', 0), '0', 'Should correctly translate block numbers into HF states (updated value)')
+    st.equal(c.paramByBlock('pow', 'minerReward', 5), '0', 'Should correctly translate block numbers into HF states (original value)')
 
     st.end()
   })

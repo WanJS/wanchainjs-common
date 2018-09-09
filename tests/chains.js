@@ -41,35 +41,16 @@ tape('[Common]: Initialization / Chain params', function (t) {
 
   t.test('Should provide correct access to chain parameters', function (st) {
     let c = new Common('mainnet')
-    st.equal(c.genesis().hash, '0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3', 'should return correct genesis hash')
-    st.equal(c.hardforks()[3]['block'], 2463000, 'should return correct hardfork data')
-    st.equal(c.bootstrapNodes()[0].port, 30303, 'should return a bootstrap node array')
+    st.equal(c.genesis().hash, '0x0376899c001618fc7d5ab4f31cfd7f57ca3a896ccc1581a57d8f129ecf40b840', 'should return correct genesis hash')
+    st.equal(c.hardforks()[0]['block'], 0, 'should return correct hardfork data')
+    st.equal(c.bootstrapNodes()[0].port, 17717, 'should return a bootstrap node array')
 
     st.end()
   })
 
   t.test('Should be able to access data for all chains provided', function (st) {
     let c = new Common('mainnet')
-    st.equal(c.genesis().hash, '0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3', 'mainnet')
-    c.setChain('ropsten')
-    st.equal(c.genesis().hash, '0x41941023680923e0fe4d74a34bdac8141f2540e3ae90623718e47d66d1ca4a2d', 'ropsten')
-    c.setChain('rinkeby')
-    st.equal(c.genesis().hash, '0x6341fd3daf94b748c72ced5a5b26028f2474f5f00d824504e4fa37a75767e177', 'rinkeby')
-    c.setChain('kovan')
-    st.equal(c.genesis().hash, '0xa3c565fc15c7478862d50ccd6561e3c06b24cc509bf388941c25ea985ce32cb9', 'kovan')
-
-    st.end()
-  })
-
-  t.test('Should provide correct access to private network chain parameters', function (st) {
-    let chainParams = require('./testnet.json')
-    let c = new Common(chainParams, 'byzantium')
-    st.equal(c.chainName(), 'testnet', 'should initialize with chain name')
-    st.equal(c.chainId(), 12345, 'should return correct chain Id')
-    st.equal(c.networkId(), 12345, 'should return correct network Id')
-    st.equal(c.genesis().hash, '0xaa00000000000000000000000000000000000000000000000000000000000000', 'should return correct genesis hash')
-    st.equal(c.hardforks()[3]['block'], 3, 'should return correct hardfork data')
-    st.equal(c.bootstrapNodes()[1].ip, '10.0.0.2', 'should return a bootstrap node array')
+    st.equal(c.genesis().hash, '0x0376899c001618fc7d5ab4f31cfd7f57ca3a896ccc1581a57d8f129ecf40b840', 'mainnet')
 
     st.end()
   })
