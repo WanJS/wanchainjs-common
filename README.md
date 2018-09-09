@@ -1,17 +1,25 @@
-# SYNOPSIS
+# WanchainJS Common
 
-[![Build Status](https://travis-ci.org/ethereumjs/ethereumjs-common.svg?branch=master)](https://travis-ci.org/ethereumjs/ethereumjs-common)
-[![Coverage Status](https://img.shields.io/coveralls/ethereumjs/ethereumjs-common.svg?style=flat-square)](https://coveralls.io/r/ethereumjs/ethereumjs-common)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) 
-[![Gitter](https://img.shields.io/gitter/room/ethereum/ethereumjs.svg?style=flat-square)]()
+[![CircleCI][circle-image]][circle-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![dependency status][dep-image]][dep-url]
+[![NPM][npm-image]][npm-url]
 
-# ETHEREUMJS-COMMON
-Resources common to all Ethereum implementations
+[circle-image]: https://circleci.com/gh/WanJS/wanchainjs-common.svg?style=svg
+[circle-url]: https://circleci.com/gh/WanJS/wanchainjs-common
+[dep-image]: https://david-dm.org/WanJS/wanchainjs-common.svg
+[dep-url]: https://david-dm.org/WanJS/wanchainjs-common
+[coveralls-image]: https://coveralls.io/repos/github/WanJS/wanchainjs-common/badge.svg?branch=dev
+[coveralls-url]: https://coveralls.io/github/WanJS/wanchainjs-common?branch=dev
+[npm-image]: http://img.shields.io/npm/v/wanchainjs-common.svg
+[npm-url]: https://www.npmjs.org/package/wanchainjs-common
 
-Succeeds the old [ethereum/common](https://github.com/ethereumjs/common/) library.
+Resources common to all Wanchain implementations
+
+Succeeds the old [wanchain/common](https://github.com/WanJS/wanchain-common/) library.
 
 # INSTALL
-`npm install ethereumjs-common`
+`npm install wanchainjs-common`
 
 # USAGE
 
@@ -22,7 +30,7 @@ together with a specific ``hardfork`` provided.
 Here are some simple usage examples:
 
 ```javascript
-const Common = require('ethereumjs-common')
+const Common = require('wanchainjs-common')
 
 // Instantiate with only the chain
 let c = new Common('ropsten')

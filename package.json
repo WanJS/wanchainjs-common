@@ -1,6 +1,6 @@
 {
   "name": "wanchainjs-common",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Resources common to all Wanchain implementations",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wanchainjs/ethereumjs-common.git"
+    "url": "git+https://github.com/wanchainjs/wanchainjs-common.git"
   },
   "keywords": [
     "wanchain",
@@ -30,7 +30,7 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wanchainjs/ethereumjs-common/issues"
+    "url": "https://github.com/wanchainjs/wanchainjs-common/issues"
   },
   "homepage": "https://github.com/wanchainjs/wanchainjs-common",
   "devDependencies": {
