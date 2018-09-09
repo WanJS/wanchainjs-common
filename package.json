@@ -6,9 +6,9 @@
   "scripts": {
     "test:coverage": "nyc npm run test:unit && npm run test:coveralls-upload",
     "test:coveralls-upload": "if [ $COVERALLS_REPO_TOKEN ]; then nyc report --reporter=text-lcov | coveralls; fi",
-    "test:lint": "standard",
+    "lint": "standard",
     "test:unit": "node tests/",
-    "test": "npm run test:lint && node tests/",
+    "test": "npm run lint && node tests/",
     "build:docs": "documentation build ./index.js --format md --shallow > ./docs/index.md"
   },
   "repository": {
